@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- fontawesome css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- page navigation -->
+    <nav class="mt-4 text-center" > 
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#my-landing-hero">home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#my-work">Work</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- landing overview -->
+    <div class="px-4 py-5 my-5 text-center" id="my-landing-hero">
+      <img class="img-fluid mx-auto mb-4" src="assets/images/avatar.png" alt="" id="my-hero-image">
+      <h1 class="display-5 fw-bold">Hello!</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mt-4 mb-4">I am <span id="my-name">Gursheen Kaur</span>! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, cumque eos architecto aliquam excepturi laboriosam obcaecati ab id nesciunt inventore voluptatibus exercitationem animi voluptatum velit, sunt laudantium facere ad! Deserunt. </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-5">
+          <a class="btn btn-dark btn-lg px-4" href="http://">LinkedIn</a>
+          <a class="btn btn-dark btn-lg px-4" href="http://">Resume</a>
+          <a class="btn btn-dark btn-lg px-4" href="http://">Github</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- work -->
+    <div class="container mt-4 mb-4" id="my-work">
+      <h2 class="text-center mb-5 nav-link">Work</h2>
+      
+      <!-- row 1 -->
+      <div class="row align-items-md-stretch">
+        <!-- item left -->
+        <div class="col-md-6 mb-4">
+          <div class="h-100 p-5 text-white rounded-3 my-work-card">
+            <h2>Project Name</h2>
+            <p>Project Description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perferendis esse magnam! Optio minus, officiis consequuntur eius esse iste dignissimos provident dicta. Sequi libero reiciendis, animi facere saepe sunt optio.</p>
+            <a class="btn btn-outline-light" type="button" href="">Link to Project</a>
+          </div>
+        </div>
+        <!-- item right -->
+        <div class="col-md-6 mb-4">
+          <div class="h-100 p-5 bg-light border rounded-3">
+            <h2>Project Name</h2>
+            <p>Project Description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perferendis esse magnam! Optio minus, officiis consequuntur eius esse iste dignissimos provident dicta. Sequi libero reiciendis, animi facere saepe sunt optio.</p>
+            <a class="btn btn-outline-dark" type="button" href="">Link to Project</a>
+          </div>
+        </div>
+      </div>
+
+       <!-- row 2 -->
+       <div class="row align-items-md-stretch">
+         <!-- item left -->
+         <div class="col-md-6 mb-4">
+           <div class="h-100 p-5 bg-light border rounded-3">
+             <h2>Project Name</h2>
+             <p>Project Description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perferendis esse magnam! Optio minus, officiis consequuntur eius esse iste dignissimos provident dicta. Sequi libero reiciendis, animi facere saepe sunt optio.</p>
+             <a class="btn btn-outline-dark" type="button" href="">Link to Project</a>
+            </div>
+          </div>
+          <!-- item right -->
+          <div class="col-md-6 mb-4">
+            <div class="h-100 p-5 text-white rounded-3 my-work-card">
+              <h2>Project Name</h2>
+              <p>Project Description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perferendis esse magnam! Optio minus, officiis consequuntur eius esse iste dignissimos provident dicta. Sequi libero reiciendis, animi facere saepe sunt optio.</p>
+              <a class="btn btn-outline-light" type="button" href="">Link to Project</a>
+            </div>
+          </div>
+      </div>
+      
+    </div>
+    <!-- Skills -->
+    <div class="container" id="my-skills-table">
+      <h2 class="text-center mb-4 nav-link pb-4">Skills</h2>
+      <div class="table-responsive container mt-4">
+        <table class="table table-striped text-center">
+          <thead>
+            <tr>
+              <th style="width: 34%;"></th>
+              <th style="width: 22%;">Beginner</th>
+              <th style="width: 22%;">Intermediate</th>
+              <th style="width: 22%;">Pro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="text-start">HTML</th>
+              <td></td>
+              <td></td>
+              <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">CSS</th>
+              <td></td>
+              <td></td>
+              <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Bootstrap</th>
+              <td></td>
+              <td></td>
+              <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Javascript</th>
+              <td></td>
+              <td></td>
+              <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">DOM Manipulation</th>
+              <td></td>
+              <td></td>
+              <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Browser APIs</th>
+              <td></td>
+              <td><i class="fas fa-check"></i></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Data Structure and Algorithms</th>
+              <td></td>
+              <td><i class="fas fa-check"></i></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">GraphQL</th>
+              <td><i class="fas fa-check"></i></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">React</th>
+              <td><i class="fas fa-check"></i></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Node</th>
+              <td><i class="fas fa-check"></i></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>  
+        </table>
+      </div>
+    </div>
+    
+    <!-- contact -->
+    <div class="container" id="contact">
+      <h2 class="text-center mb-4 nav-link pb-4">contact</h2>
+      <div class="container">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="mytextarea" class="form-label">Message</label>
+            <textarea class="form-control" id="mytextarea" rows="5" aria-describedby="messageHelp"></textarea>
+            <div id="messageHelp" class="form-text">Please add your message in the box above and press send button.</div>
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-dark" type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
