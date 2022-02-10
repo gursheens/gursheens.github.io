@@ -71,7 +71,8 @@
           <p>A dictionary project/app where you can search for any word, bookmark words and meanings, manage the
             bookmarked words and create shareable
             links to bookmarked words</p>
-          <a class="btn btn-outline-light" type="button" href="https://miwordbook.herokuapp.com/" target="_blank">Link to Project</a>
+          <a class="btn btn-outline-light" type="button" href="https://miwordbook.herokuapp.com/" target="_blank">Link
+            to Project</a>
         </div>
       </div>
       <!-- item right -->
@@ -187,16 +188,16 @@
   <div class="container mb-4" id="contact">
     <h2 class="text-center mb-4 nav-link pb-4">contact</h2>
     <div class="container">
-      <form action="mailto:kgursheen30@gmail.com" method="POST" enctype="multipart/form-data" name="ContactForm"
-        id="contact">
+      <form action="messageform.php" method="POST" name="contact_form">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
           <label for="mytextarea" class="form-label">Message</label>
-          <textarea class="form-control" id="mytextarea" rows="5" aria-describedby="messageHelp"></textarea>
+          <textarea class="form-control" id="mytextarea" rows="5" aria-describedby="messageHelp"
+            name="message"></textarea>
           <div id="messageHelp" class="form-text">Please add your message in the box above and press send button.</div>
         </div>
         <div class="d-grid gap-2">
@@ -208,9 +209,18 @@
 
   <button><img src="button.gif" alt="Go Up" srcset="" onclick="topFunction()" id="myBtn" title="Go Up"></button>
 
+
+  <script language="JavaScript">
+    var frmvalidator = new Validator("contactform");
+    frmvalidator.addValidation("email", "req", "Please provide your email");
+    frmvalidator.addValidation("email", "email", "Please enter a valid email address");
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
+
+
   <script src="action.js"></script>
 </body>
 
