@@ -22,6 +22,14 @@
 
   <!-- custom stylesheet -->
   <link rel="stylesheet" href="index.css">
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+    emailjs.init("user_TaH8nxDndyLcCGT8PufSy");
+    })();
+  </script>
 </head>
 
 <body>
@@ -188,40 +196,87 @@
   <div class="container mb-4" id="contact">
     <h2 class="text-center mb-4 nav-link pb-4">contact</h2>
     <div class="container">
-      <form action="messageform.php" method="POST" name="contact_form">
+      <form id="contact-form">
+        <input type="hidden" name="contact_number">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+          <label for="user_name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="user_name" aria-describedby="userName" name="from_name">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="user_email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="user_email" aria-describedby="emailHelp" name="user_email">
           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
           <label for="mytextarea" class="form-label">Message</label>
-          <textarea class="form-control" id="mytextarea" rows="5" aria-describedby="messageHelp"
-            name="message"></textarea>
+          <textarea class="form-control" rows="5" aria-describedby="messageHelp" name="message"></textarea>
           <div id="messageHelp" class="form-text">Please add your message in the box above and press send button.</div>
         </div>
         <div class="d-grid gap-2">
-          <input type="submit">
+          <input type="submit" value="send">
         </div>
       </form>
     </div>
   </div>
 
+  <div class="position-fixed top-50 start-50 translate-middle" style="z-index: 11">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header bg-success text-light">
+        <strong class="me-auto">Gursheen</strong>
+        <small>Just now</small>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        I've received your message, thanks!
+      </div>
+    </div>
+  </div>
+
+  <div class="position-fixed top-50 start-50 translate-middle" style="z-index: 11">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header bg-danger text-light">
+        <strong class="me-auto">Gursheen</strong>
+        <small>Just now</small>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Err! Can you try sending again?
+      </div>
+    </div>
+  </div>
+
   <button><img src="button.gif" alt="Go Up" srcset="" onclick="topFunction()" id="myBtn" title="Go Up"></button>
-
-
-  <script language="JavaScript">
-    var frmvalidator = new Validator("contactform");
-    frmvalidator.addValidation("email", "req", "Please provide your email");
-    frmvalidator.addValidation("email", "email", "Please enter a valid email address");
-  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
+  <script src="src.js"></script>
+  
+  <script type="text/javascript">
+    window.onload = function() {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-
-  <script src="action.js"></script>
+            var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+            var toastList = toastElList.map(function(toastEl) {
+              return new bootstrap.Toast(toastEl)
+            })
+            // generate a five digit number for the contact_number variable
+            this.contact_number.value = Math.random() * 100000 | 0;
+            // these IDs from the previous steps
+            emailjs.sendForm('service_ixk6g62', 'template_0664s31', this)
+                .then(function() {
+                    console.log('SUCCESS!');
+                    document.getElementById("contact-form").reset();
+                    toastList[0].show() 
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    toastList[1].show() 
+                });
+        });
+    }
+  </script>
 </body>
 
 </html>
