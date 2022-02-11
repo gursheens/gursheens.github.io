@@ -1,2 +1,0 @@
-# WordBook project
- personal project
