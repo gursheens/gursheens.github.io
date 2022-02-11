@@ -26,8 +26,8 @@
   <!-- EmailJS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script type="text/javascript">
-    (function() {
-    emailjs.init("user_TaH8nxDndyLcCGT8PufSy");
+    (function () {
+      emailjs.init("user_TaH8nxDndyLcCGT8PufSy");
     })();
   </script>
 </head>
@@ -201,7 +201,7 @@
         <div class="mb-3">
           <label for="user_name" class="form-label">Name</label>
           <input type="text" class="form-control" id="user_name" aria-describedby="userName" name="from_name">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <div id="emailHelp" class="form-text">We'll never share your details with anyone else.</div>
         </div>
         <div class="mb-3">
           <label for="user_email" class="form-label">Email address</label>
@@ -252,29 +252,29 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
   <script src="src.js"></script>
-  
-  <script type="text/javascript">
-    window.onload = function() {
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
 
-            var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-            var toastList = toastElList.map(function(toastEl) {
-              return new bootstrap.Toast(toastEl)
-            })
-            // generate a five digit number for the contact_number variable
-            this.contact_number.value = Math.random() * 100000 | 0;
-            // these IDs from the previous steps
-            emailjs.sendForm('service_ixk6g62', 'template_0664s31', this)
-                .then(function() {
-                    console.log('SUCCESS!');
-                    document.getElementById("contact-form").reset();
-                    toastList[0].show() 
-                }, function(error) {
-                    console.log('FAILED...', error);
-                    toastList[1].show() 
-                });
-        });
+  <script type="text/javascript">
+    window.onload = function () {
+      document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function (toastEl) {
+          return new bootstrap.Toast(toastEl)
+        })
+        // generate a five digit number for the contact_number variable
+        this.contact_number.value = Math.random() * 100000 | 0;
+        // these IDs from the previous steps
+        emailjs.sendForm('service_ixk6g62', 'template_0664s31', this)
+          .then(function () {
+            console.log('SUCCESS!');
+            document.getElementById("contact-form").reset();
+            toastList[0].show()
+          }, function (error) {
+            console.log('FAILED...', error);
+            toastList[1].show()
+          });
+      });
     }
   </script>
 </body>
