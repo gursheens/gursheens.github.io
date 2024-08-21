@@ -66,5 +66,5 @@ body {
   }
 
 .carousel-inner {
-    overflow: scroll
+    overflow: scroll !important
 }
